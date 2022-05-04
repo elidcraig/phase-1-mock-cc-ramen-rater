@@ -14,9 +14,13 @@ fetch('http://localhost:3000/ramens')
             const ramenImg = document.querySelector('img.detail-image')
             const ramenName = document.querySelector('h2.name')
             const ramenRestaurant = document.querySelector('h3.restaurant')
+            const ratingDisplay = document.querySelector('span#rating-display')
+            const commentDisplay = document.querySelector('p#comment-display')
             ramenImg.src = ramenObj.image
             ramenName.textContent = ramenObj.name 
-            ramenRestaurant.textContent = ramenObj.restaurant 
+            ramenRestaurant.textContent = ramenObj.restaurant
+            ratingDisplay.textContent = ramenObj.rating
+            commentDisplay.textContent = ramenObj.comment
 
         })
 
