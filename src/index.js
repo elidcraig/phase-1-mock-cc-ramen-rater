@@ -6,7 +6,6 @@ fetch('http://localhost:3000/ramens')
         const newImgElement = document.createElement('img')
         newImgElement.src = ramenObj.image
 
-        const detailsElement = document.querySelector('div#ramen-detail')
         newImgElement.addEventListener('click', () => {
             createRamenDisplayCard(ramenObj)
         })
@@ -37,6 +36,7 @@ newRamenForm.addEventListener('submit', (event) => {
     const menuElement = document.querySelector('div#ramen-menu')
     menuElement.appendChild(newRamenImgElement)
     
+    newRamenForm.reset()
 })
 
 function createRamenDisplayCard(ramenObj) {
