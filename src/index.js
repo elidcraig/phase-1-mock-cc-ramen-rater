@@ -52,3 +52,17 @@ function createRamenDisplayCard(ramenObj) {
     ratingDisplay.textContent = ramenObj.rating
     commentDisplay.textContent = ramenObj.comment
 }
+
+document.querySelector('form#edit-ramen').addEventListener('submit', (event) => {
+    event.preventDefault()
+    const ratingDisplay = document.querySelector('span#rating-display')
+    const commentDisplay = document.querySelector('p#comment-display')
+
+    if(ratingDisplay.textContent === 'Insert rating here') {
+        alert('Please choose which ramen you would like to edit!')
+    } else {
+        ratingDisplay.textContent = event.target[0].value
+        commentDisplay.textContent = event.target[1].value
+        document.querySelector('form#edit-ramen').reset()
+    }  
+})
