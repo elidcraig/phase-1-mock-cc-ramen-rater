@@ -10,7 +10,7 @@ fetch('http://localhost:3000/ramens')
 
         const detailsElement = document.querySelector('div#ramen-detail')
         newImgElement.addEventListener('click', () => {
-
+            console.log(ramenObj)
             const ramenImg = document.querySelector('img.detail-image')
             const ramenName = document.querySelector('h2.name')
             const ramenRestaurant = document.querySelector('h3.restaurant')
@@ -26,4 +26,19 @@ fetch('http://localhost:3000/ramens')
 
         menuElement.appendChild(newImgElement)
     })
+})
+
+const newRamenForm = document.querySelector('form#new-ramen')
+newRamenForm.addEventListener('submit', (event) => {
+    event.preventDefault()
+    const newRamenObj = {}
+    newRamenObj.name = event.target[0].value
+    newRamenObj.restaurant = event.target[1].value
+    newRamenObj.image = event.target[2].value
+    newRamenObj.rating = parseInt(event.target[3].value)
+    newRamenObj.comment = event.target[4].value
+    console.log(newRamenObj)
+ 
+    // New ramen is appended to div#ramen-menu
+    
 })
